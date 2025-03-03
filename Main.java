@@ -15,6 +15,9 @@ public class Main {
         word = revString(word);
 
         System.out.println("A palavra invertida fica: "+ word);
+
+        teste = seqGenerator(5);
+        System.out.println("Resultado da função: " + teste);
     }
 
     //Multiplicação de dois números naturais, através de somas sucessivas (Ex.: 6 ∗ 4 = 4 + 4 + 4 + 4 + 4 + 4).
@@ -53,5 +56,21 @@ public class Main {
         return revString(word.substring(1)) + word.charAt(0);
     }
 
-    
+    /*Gerador da sequência dada por:
+    * F(1) = 1
+    * F(2) = 2
+    * F(n) = 2 ∗ F(n − 1) + 3 ∗ F(n − 2).*/
+
+    public static int seqGenerator(int n){
+        //Aparentemente está certo, mas não tenho certeza
+        if (n == 1) {
+            return 1;
+
+        }else if (n == 2){
+            return 2;
+
+        }else{
+            return 2 * seqGenerator(n - 1) + 3 * seqGenerator(n - 2);
+        }
+    }
 }
