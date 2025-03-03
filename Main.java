@@ -11,6 +11,10 @@ public class Main {
         double value = sumDiv(2);
         System.out.printf("O valor da terceira função é: %.2f \n", value);
 
+        String word = "Inverso";
+        word = revString(word);
+
+        System.out.println("A palavra invertida fica: "+ word);
     }
 
     //Multiplicação de dois números naturais, através de somas sucessivas (Ex.: 6 ∗ 4 = 4 + 4 + 4 + 4 + 4 + 4).
@@ -39,4 +43,15 @@ public class Main {
         
         return 1.0 / divisor + sumDiv(divisor - 1);
     }
+
+    //Inversão de uma string.
+    public static String revString(String word){
+        if (word.isEmpty()) {
+            return word;
+        }
+
+        return revString(word.substring(1)) + word.charAt(0);
+    }
+
+    
 }
