@@ -18,6 +18,14 @@ public class Main {
 
         teste = seqGenerator(5);
         System.out.println("Resultado da função: " + teste);
+
+        teste = ackerman(2, 3);
+        System.out.println("Resultado da função: " + teste);
+
+        int [] array = {1,1,1,1,1};
+        teste = sumArray(array, 0);
+        System.out.println("Resultado da função é: " + teste);
+
     }
 
     //Multiplicação de dois números naturais, através de somas sucessivas (Ex.: 6 ∗ 4 = 4 + 4 + 4 + 4 + 4 + 4).
@@ -92,5 +100,11 @@ public class Main {
         }
     }
 
-    
+    //A partir de um vetor de números inteiros, calcule a soma e o produto dos elementos do vetor.
+    public static int sumArray(int [] array, int idx){
+        if (idx == array.length){
+            return 0;
+        }
+        return array[idx] + sumArray(array, idx + 1);
+    }
 }
