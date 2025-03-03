@@ -73,4 +73,24 @@ public class Main {
             return 2 * seqGenerator(n - 1) + 3 * seqGenerator(n - 2);
         }
     }
+
+    //Função de Ackerman
+    //Recebe dois parametros
+    //Se m == 0, retorna n + 1
+    //Se n == 0, retorna  A(m − 1, 1)
+    //Senão, retorna A(m − 1, A(m, n − 1))
+
+    public static int ackerman(int a, int b){
+        if (a == 0){
+            return b + 1;
+
+        }else if (b == 0){
+            return ackerman(a - 1, 1);
+
+        }else{
+            return ackerman(a - 1, ackerman(a, b - 1));
+        }
+    }
+
+    
 }
