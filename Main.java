@@ -26,6 +26,9 @@ public class Main {
         teste = sumArray(array, 0);
         System.out.println("Resultado da função é: " + teste);
 
+        word = "abcbaa";
+        System.out.println("É palíndromo? " + isPalindrome(word, 0, word.length() - 1));
+
     }
 
     //Multiplicação de dois números naturais, através de somas sucessivas (Ex.: 6 ∗ 4 = 4 + 4 + 4 + 4 + 4 + 4).
@@ -106,5 +109,16 @@ public class Main {
             return 0;
         }
         return array[idx] + sumArray(array, idx + 1);
+    }
+
+    //Verifique se uma palavra é palíndromo (Ex. aba, abcba, xyzzyx).
+    public static boolean isPalindrome(String word, int left, int right){
+        if (left >= right) {
+            return true;
+        }
+        if (word.charAt(left) != word.charAt(right)) {
+            return false;
+        }
+        return isPalindrome(word, left + 1, right - 1);
     }
 }
